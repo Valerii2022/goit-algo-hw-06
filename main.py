@@ -70,8 +70,8 @@ edges = [
 G.add_weighted_edges_from(edges)
 
 # Візуалізація графа
-plt.figure(figsize=(8, 6))
-nx.draw(G, with_labels=True, node_color='skyblue', node_size=1000, edge_color='gray')
+plt.figure(figsize=(24, 16))
+nx.draw(G, with_labels=True, node_color='skyblue', node_size=300, edge_color='gray', font_size=6, font_weight='bold')
 plt.title("Transport Network Graph")
 plt.show()
 
@@ -176,9 +176,9 @@ for station in stations:
         print(f"{start_station} -> {station}: {path}, Відстань: {all_distances[start_station][station]}")
 
 # Візуалізація графа
-plt.figure(figsize=(14, 10))
+plt.figure(figsize=(24, 16))
 pos = nx.spring_layout(G)
-nx.draw(G, pos, with_labels=True, node_color='skyblue', node_size=1000, edge_color='gray', font_size=10, font_weight='bold')
+nx.draw(G, pos, with_labels=True, node_color='skyblue', node_size=300, edge_color='gray', font_size=6, font_weight='bold')
 labels = nx.get_edge_attributes(G, 'weight')
 nx.draw_networkx_edge_labels(G, pos, edge_labels=labels)
 plt.title("Transport Network Graph with Weights")
